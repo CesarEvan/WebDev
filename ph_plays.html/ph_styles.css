@@ -1,0 +1,147 @@
+@charset "utf-8";
+@font-face { font-family: champagne;
+src: url(cac_champagne.woff),
+url(cac_champagne.tff);
+}
+@font-face {
+    font-family: Grunge;
+    src: url(1942.woff),url(1942.tff);
+   
+}
+@font-face {
+    font-family: Dobkin;
+    src: url(DobkinPlain.woff),url(DobkinPlain.tff);
+}
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 1
+   
+   PHCT Typographic Style Sheet
+   Author: Cesar N. Olaer
+   Date:   July 18 2019
+   
+   Filename: ph_styles.css
+
+*/
+
+
+/* Structural Styles */
+html{
+    background-color: hsl(91,8%,56%);
+}
+
+body{
+    background-color: hsl(58,31%,84%);
+    font-family: 'palatino linotype','book antiqua','palatino serif';
+}
+
+header{
+    background-color: black;
+}
+
+p {
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+ }
+body > P{
+    font-size: 1.1em;
+    text-align: justify,center;
+}
+address{
+    font-size: 0.9em;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: justify,center;
+    font-style: normal;
+}
+
+
+
+
+
+/* Navigation Styles */
+nav a{
+    font-family: 'Trebuchet MS', Helvetica,sans-serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-decoration: none
+}
+nav :visited{
+    color: white;
+    background-color: hsla(0,0%,42%,.04);
+    
+}
+nav :hover{
+    text-decoration-color: hsla(0,0%,100%,0.7);
+    background-color: hsl(0,0%,42%,0.7);
+}
+
+
+
+
+/* Section Styles */
+section.playbill h1{
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0px;
+    padding-top: 20px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+section.playbill#play1 > h1{
+    
+    font-family: Champagne,cursive;
+}
+
+section.playbill#play2 > h1{
+    
+    font-family: Grunge,'Times New Roman', Times, Serif;
+}
+
+section.playbill#play3 > h1{
+    
+    font-family: Impack,Charcoal,sans-serif;
+}
+
+section.playbill#play4 > h1{
+    
+    font-family: Dobkin,cursive;
+}
+section.playbill#play1 {
+    background:hsl(240,100%,80%);
+}
+section.playbill#play2 {
+    background: hsl(25,88%,73%);
+}  
+section.playbill#play3{
+    background: hsl(0,100%,75%);
+}  
+section.playbill#play4 {
+    background: hsla(296,86%,86%);
+}
+
+
+
+
+
+/* Description List Styles */
+
+dt{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: hsla(0,0%,0%,0.4)
+}
+
+dd{
+    font-size: 1.3em;
+    margin-left: 0px;
+    margin-bottom: 10px; 
+}
+
