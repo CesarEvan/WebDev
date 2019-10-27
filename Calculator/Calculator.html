@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+  <style>
+    div.col {
+      text-align:center;
+    }
+    div button {
+      margin:5px;
+      
+    }
+    div#calcu button{
+      width:35px;
+      height:35px;
+      font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+    <div class="row">
+        <div id="calcu" class="col">
+            <h1 id="displayNum"> &nbsp;</h1>
+            <button value="7" data-number() class="btn btn-dark" onclick="appendNumber(this.value)">7</button>
+            <button value="8" class="btn btn-dark" onclick="appendNumber(this.value)">8</button>
+            <button value="9" class="btn btn-dark" onclick="appendNumber(this.value)">9</button>
+            <button class="btn btn-dark" onclick="cmdDivide()">÷</button>
+
+            <br>
+
+            <button value="4" class="btn btn-dark" onclick="appendNumber(this.value)">4</button>
+            <button value="5" class="btn btn-dark" onclick="appendNumber(this.value)">5</button>
+            <button value="6" class="btn btn-dark" onclick="appendNumber(this.value)">6</button>
+            <button class="btn btn-dark" onclick="cmdMultiply()">x</button>
+
+            <br>
+
+            <button value="1" class="btn btn-dark" onclick="appendNumber(this.value)">1</button>
+            <button value="2" class="btn btn-dark" onclick="appendNumber(this.value)">2</button>
+            <button value="3" class="btn btn-dark" onclick="appendNumber(this.value)">3</button>
+            <button class="btn btn-dark" onclick="cmdMinus()">-</button>
+
+            <br>
+
+            <button value="0" class="btn btn-dark" onclick="appendNumber(this.value)">0</button>
+            <button class="btn btn-dark" onclick="cmdCancel()">C</button>
+            <button class="btn btn-dark" onclick="cmdEquals()">=</button>
+            <button class="btn btn-dark" onclick="cmdPlus()">+</button>
+        </div>
+    </div>
+    <script>
+        var dispNum = 0;
+        var textNum = null;
+        var factor;
+        function appendNumber(num){
+
+            if(textNum==null)
+                textNum = num;
+            else
+                textNum += num;
+            
+            
+            document.getElementById('displayNum').innerHTML = textNum;
+            console.log(textNum);
+        }
+
+        function cmdCancel(){
+            dispNum = 0;
+            textNum = null;
+            document.getElementById('displayNum').innerHTML = "&nbsp;";
+        }
+
+        function cmdEquals(){
+                if(factor==="+")
+                document.getElementById('displayNum').innerHTML = dispNum + parseInt(textNum);
+                else if(factor==="-")
+                document.getElementById('displayNum').innerHTML = dispNum - parseInt(textNum);
+                else if(factor==="÷")
+                document.getElementById('displayNum').innerHTML = dispNum / parseInt(textNum);
+                else if(factor==="*")
+                document.getElementById('displayNum').innerHTML = dispNum * parseInt(textNum);
+
+
+                console.log(dispNum);
+        }
+
+        function cmdPlus(){
+            var newNum = parseInt(textNum);
+            dispNum = dispNum + newNum;
+            textNum = null;
+            document.getElementById('displayNum').innerHTML = "&nbsp;"; //&nbsp is added so that the h1 element on the body will exist/displayed.
+            factor="+";
+        }
+        function cmdMinus(){
+            var newNum = parseInt(textNum);
+            dispNum = dispNum + newNum;
+            textNum = null;
+            document.getElementById('displayNum').innerHTML = "&nbsp;";
+            factor="-";
+        }
+
+        function cmdDivide(){
+            var newNum = parseInt(textNum);
+            dispNum = dispNum + newNum;
+            textNum = null;
+            document.getElementById('displayNum').innerHTML = "&nbsp;";
+            factor="÷";
+        }
+
+
+        function cmdMultiply(){
+            var newNum = parseInt(textNum);
+            dispNum = dispNum + newNum;
+            textNum = null;
+            document.getElementById('displayNum').innerHTML = "&nbsp;";
+            factor="*";
+        }
+
+
+
+    </script>
+</body>
+</html>
